@@ -17,7 +17,7 @@ namespace SignalRTest.Services
 
         public async Task AddMessage(Message message)
         {
-            await _context.messages.AddAsync(message);
+            await _context.Messages.AddAsync(message);
             try
             {
                 await _context.SaveChangesAsync();
@@ -29,7 +29,7 @@ namespace SignalRTest.Services
         }
 
         public IQueryable<Message> GetMessageses() =>
-            _context.messages.Include(m => m.Sender);
+            _context.Messages.Include(m => m.Sender);
 
     }
 }

@@ -41,16 +41,16 @@ namespace SignalRTest.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(Message message)
         {
-            if (ModelState.IsValid)
-            {
+            //if (ModelState.IsValid)
+            //{
                 message.UserName = User.Identity.Name;
                 var Sender = await _userManager.GetUserAsync(User);
                 message.UserId = Sender.Id;
                 await _IChat.AddMessage(message);
                 return Ok();
 
-            }
-            return Error();
+            //}
+            //return Error();
         }
 
         public IActionResult Privacy()

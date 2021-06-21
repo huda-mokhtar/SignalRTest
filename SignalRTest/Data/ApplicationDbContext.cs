@@ -22,6 +22,6 @@ namespace SignalRTest.Data
                 WithMany(d => d.Messages).
                 HasForeignKey(d => d.UserId);
         }
-        public virtual DbSet<Message> messages { get; set; }
+        public virtual DbSet<Message> Messages { get; set; }
     }
 }
